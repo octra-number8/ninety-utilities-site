@@ -108,24 +108,15 @@ Pages):
 - [ ] Optional: submit the sitemap in Google Search Console (verify the
       domain via a **TXT record Google specifies** — additive, safe).
 
-## Fonts (one-time, before or after first deploy)
+## Fonts
 
-The brand typefaces are self-hosted — no CDN at runtime. Download once and
-drop into `assets/fonts/`:
-
-- `HankenGrotesk-Variable.woff2` — Hanken Grotesk variable font
-  (SIL Open Font License, from Google Fonts or
-  https://github.com/marcologous/hanken-grotesk)
-- `IBMPlexMono-Regular.woff2` and `IBMPlexMono-Medium.woff2` — IBM Plex Mono
-  (SIL OFL, from Google Fonts or https://github.com/IBM/plex)
-
-Until the files exist the site falls back to system fonts; the `@font-face`
-rules in `styles.css` pick the files up automatically once added.
+Done — the brand typefaces are self-hosted in `assets/fonts/` (Hanken Grotesk
+variable + IBM Plex Mono Regular/Medium, latin-subset woff2 from Google Fonts,
+SIL Open Font License). No CDN is used at runtime and no action is needed.
 
 ## Before go-live content checklist
 
 - [ ] Replace every `[PROVIDE: …]` placeholder in the HTML.
-- [ ] Font files added to `assets/fonts/` (see above).
 - [ ] Capability figures on the homepage are real and dated — or the section
       is removed entirely. Same for the RIDDOR row on Safety.
 - [ ] Statutory footer: company number, place of registration, registered

@@ -48,7 +48,7 @@ icon (see [assets/favicon.svg](assets/favicon.svg)) is for square crops only.
   Display 30/800, heading 24/700, subhead 16/700, body 14/400 (≤34em,
   left-aligned, never justified), label 11.5/500/.26em tracked uppercase
   (the one typographic signature). **Self-hosted** from `assets/fonts/`
-  (files not yet added — see DEPLOY.md; system fallbacks until then).
+  (latin-subset woff2, SIL OFL — no CDN at runtime).
 - Layout: 1200px max, page `#F5F5F7`, white cards with 1px `#ECECEE` border
   and 16px radius. Header 72px white → solid ink on scroll (site.js). Sections
   alternate white/grey; **at most one ink section per page** and it holds the
@@ -127,7 +127,6 @@ Planned on the same domain. Portal can live at `/portal/` (same project) or
 ## State (25/08/2026)
 
 Brand applied per guidelines v1.0; nine-page structure built; all copy is
-`[PROVIDE: …]` scaffolding awaiting Drew's real content. Font files not yet
-in `assets/fonts/`. Committed locally, **not pushed or deployed** — Wes's
+`[PROVIDE: …]` scaffolding awaiting Drew's real content. Committed locally, **not pushed or deployed** — Wes's
 manual steps are in DEPLOY.md. Phone number not chosen. `_brandguide.html`
 is a local gitignored copy of the brand guide for reference.
