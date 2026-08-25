@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Ninety Utilities Ltd</title>
+  <meta name="description" content="Contact Ninety Utilities Ltd to discuss a package of work, request pre-qualification information, or ask a question.">
+  <link rel="canonical" href="https://ninetygroup.co.uk/contact.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ninety Utilities Ltd">
+  <meta property="og:title" content="Contact — Ninety Utilities Ltd">
+  <meta property="og:description" content="Contact Ninety Utilities Ltd to discuss a package of work or request pre-qualification information.">
+  <meta property="og:url" content="https://ninetygroup.co.uk/contact.html">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="/">Ninety<span class="um">&nbsp;</span>Utilities</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-intro">
+      <div class="wrap">
+        <h1>Contact</h1>
+        <p>Discuss a package of work, request pre-qualification information,
+           or ask a question.</p>
+      </div>
+    </div>
+
+    <section aria-labelledby="form-heading">
+      <div class="wrap">
+        <h2 id="form-heading">Send us a message</h2>
+
+        <!-- Status messages: the Pages Function redirects here with
+             #sent or #error, and CSS :target reveals the right one.
+             Works with JavaScript disabled. -->
+        <div id="sent" class="form-status ok" role="status" tabindex="-1">
+          <p><strong>Message sent.</strong> Thank you — we'll come back to you
+             by email.</p>
+        </div>
+        <div id="error" class="form-status err" role="alert" tabindex="-1">
+          <p><strong>Something went wrong.</strong> Your message wasn't sent.
+             Please try again, or email us directly at
+             <a href="mailto:info@ninetygroup.co.uk">info@ninetygroup.co.uk</a>.</p>
+        </div>
+
+        <!-- No-JS fallback is the design: this is a plain HTML POST to the
+             Pages Function; no JavaScript is required to submit. The one
+             script below only stamps a load-time for the fast-submit spam
+             check, and its absence is tolerated by the function. -->
+        <form method="post" action="/api/contact">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="company">Company <span class="hint">Optional</span></label>
+            <input type="text" id="company" name="company" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="phone">Phone <span class="hint">Optional</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required maxlength="5000"></textarea>
+          </div>
+
+          <!-- Honeypot: hidden from humans (off-canvas + aria-hidden +
+               tabindex=-1); bots that fill it are rejected server-side. -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <!-- Load-time stamp for the fast-submit check; set by JS, optional. -->
+          <input type="hidden" name="form_ts" value="">
+
+          <button class="btn" type="submit">Send message</button>
+        </form>
+
+        <script>
+          // Progressive enhancement only — the form works without this.
+          document.querySelector('input[name="form_ts"]').value = Date.now();
+        </script>
+
+        <p class="measure" style="margin-top:1.5rem">
+          Details you send us are used only to respond to your enquiry —
+          see our <a href="/privacy.html">privacy notice</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="alt" aria-labelledby="details-heading">
+      <div class="wrap">
+        <h2 id="details-heading">Direct contact</h2>
+        <dl class="fact-list" style="max-width:36rem">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@ninetygroup.co.uk">info@ninetygroup.co.uk</a></dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd>[PROVIDE: phone number — not yet chosen]</dd>
+          </div>
+          <div>
+            <dt>Registered office</dt>
+            <dd>[PROVIDE: registered office address]</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <h2>Ninety Utilities Ltd</h2>
+        <p>Gas infrastructure contractor.<br>
+           Ninety Utilities Ltd is not an energy supplier and does not sell gas
+           or electricity.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Site</h2>
+        <ul>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/privacy.html">Privacy notice</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:info@ninetygroup.co.uk">info@ninetygroup.co.uk</a></li>
+          <li>[PROVIDE: phone number — not yet chosen]</li>
+        </ul>
+      </div>
+      <p class="statutory">
+        Ninety Utilities Ltd is a company registered in
+        [PROVIDE: place of registration — e.g. England and Wales].
+        Company number [PROVIDE: company number].
+        Registered office: [PROVIDE: registered office address].
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
