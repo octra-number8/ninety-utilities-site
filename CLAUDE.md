@@ -54,9 +54,11 @@ icon (see [assets/favicon.svg](assets/favicon.svg)) is for square crops only.
   alternate white/grey; **at most one ink section per page** and it holds the
   emergency contact block. Footer is ink with reversed lockup and the 24-hour
   escape number (National Gas Emergency Service 0800 111 999) at 24px.
-- Corner device as page framing: **max twice per page** (hero statement, one
-  pull quote/stat, active card state). CSS classes `.lockup` / `.corner-frame`
-  in [styles.css](styles.css).
+- Corner device as page framing: **max twice per page**. Standing pattern
+  (Wes, 25/08): every page title is framed (`.page-intro .corner-frame`),
+  plus ONE `.corner-frame.pull` pull-quote per page; cards show the corner
+  pair on hover/focus (guide-sanctioned active state). CSS classes
+  `.lockup` / `.corner-frame` in [styles.css](styles.css).
 - Buttons: ONE primary per view, filled `#C25E00`, 10px radius, ≥44px tall,
   outcome labels ("Start an enquiry", never "Submit"). Secondary = 1px
   `#D6D6DB` outline.
