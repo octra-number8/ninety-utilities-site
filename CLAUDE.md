@@ -74,29 +74,33 @@ icon (see [assets/favicon.svg](assets/favicon.svg)) is for square crops only.
   CMS, no CDN dependencies.** Deployed from GitHub to **Cloudflare Pages**,
   output directory = repo root.
 - Header/footer are **duplicated in every HTML file**. A nav or footer change
-  must be applied to all nine pages: index, mains-renewal, connections,
-  safety, works, careers, contact, privacy, 404. (They were generated once by
+  must be applied to all seven pages: index, mains-renewal, safety, careers,
+  contact, privacy, 404. (They were generated once by
   a throwaway script; the repo itself has no build step.)
 - [assets/site.js](assets/site.js): header ink-on-scroll + form timestamp.
   Progressive enhancement only — everything works with JS off. CSP in
   [_headers](_headers) is `script-src 'self'` (no inline scripts — keep it
   that way).
 
-## Pages (structure per brand guide §6)
+## Pages
 
-| Page | Job |
+Everything scaffolded was dropped on 25/08/2026 ("drop anything we don't
+have" — Wes): the Connections and Works-in-your-street pages, homepage
+capability figures, the safety H&S fact-list and the empty accreditations
+block (rule survives as an HTML comment in safety.html). Reinstate sections
+only when real content/certificates exist.
+
+| Page | Content |
 |---|---|
-| `index.html` | One-line statement, capability figures (real+dated or omitted), route the two audiences (networks/PCs vs developers/homeowners), ink emergency section. |
-| `mains-renewal.html` | Method, diameters/materials, reinstatement standard, typical programme. |
-| `connections.html` | Domestic / commercial / multi-plot routes: what to supply + lead time. |
-| `safety.html` | H&S policy, CDM 2015, streetworks competence, training, incident record, EMPTY accreditations block, who to call in emergency. |
-| `works.html` | "Works in your street" — public/resident-facing, plain English. |
-| `careers.html` | Vacancies by depot with tickets required; honest "none right now" default. |
-| `contact.html` | Escape line above everything, enquiry form, direct details. |
+| `index.html` | Real hero (from Drew's copy), what-we-do (3 cards into mains-renewal anchors), programme delivery, ink emergency block. |
+| `mains-renewal.html` | Full real copy: method, capability, service replacement, excavation, reinstatement, live streets, programme, people, assurance, CTA. |
+| `safety.html` | "Safety & assurance": digital management & assurance (5 cards), emergency. |
+| `careers.html` | No-vacancies + CV line, "What it's like", emergency. |
+| `contact.html` | Escape line, enquiry form, email only (phone/address removed until known). |
 | `privacy.html`, `404.html` | Standard; both noindex. |
 
-Header nav: Mains renewal · Connections · Safety · Careers + "Start an
-enquiry" Action button. Works-in-your-street and Privacy are footer links.
+Header nav: Mains renewal · Safety · Careers + "Start an enquiry" Action
+button. Sitemap lists 5 indexable pages.
 
 ## Contact form
 
@@ -109,7 +113,7 @@ Plain-POST to `functions/api/contact.js` (Pages Function) → Resend API →
 ## SEO / privacy posture
 
 - Unique title/description/OG per page, canonicals on
-  `https://ninetygroup.co.uk`, sitemap (7 indexable pages), robots disallows
+  `https://ninetygroup.co.uk`, sitemap (5 indexable pages), robots disallows
   `/api/`. Organization JSON-LD on index only, minimal — extend only with
   real data.
 - **No analytics, no cookies, no banner.** If analytics are added: cookieless
