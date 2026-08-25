@@ -63,12 +63,12 @@ Cloudflare Pages project → **Settings → Variables and Secrets** (Production)
 | Name | Value | Type |
 |---|---|---|
 | `RESEND_API_KEY` | the key from step 3 | **Secret** |
-| `CONTACT_TO` | `info@ninetygroup.co.uk` | Plain text |
+| `CONTACT_TO` | `hello@ninetygroup.co.uk` | Plain text |
 | `CONTACT_FROM` | `website@ninetygroup.co.uk` (or any address on the verified domain — it does not need a mailbox) | Plain text |
 
 Redeploy (Deployments → Retry) so the function picks them up, then test the
 form end-to-end on the `*.pages.dev` URL and confirm the email lands in
-`info@`.
+`hello@`.
 
 ## 5. Attach the custom domain
 
@@ -95,12 +95,12 @@ Pages):
    - Then: **Dynamic** redirect, expression
      `concat("https://ninetygroup.co.uk", http.request.uri.path)`,
      status **301**, preserve query string **on**.
-3. Test: `curl -I https://nine-ty.co.uk/about.html` → expect
-   `301` with `Location: https://ninetygroup.co.uk/about.html`.
+3. Test: `curl -I https://nine-ty.co.uk/safety.html` → expect
+   `301` with `Location: https://ninetygroup.co.uk/safety.html`.
 
 ## 7. Post-launch checks
 
-- [ ] Form submits and lands in info@ (check spam folder first time).
+- [ ] Form submits and lands in hello@ (check spam folder first time).
 - [ ] `#sent` / `#error` messages display (test with JS disabled too).
 - [ ] 404 page serves on a bad URL on the custom domain.
 - [ ] `https://ninetygroup.co.uk/sitemap.xml` and `/robots.txt` serve.
@@ -108,9 +108,26 @@ Pages):
 - [ ] Optional: submit the sitemap in Google Search Console (verify the
       domain via a **TXT record Google specifies** — additive, safe).
 
+## Fonts (one-time, before or after first deploy)
+
+The brand typefaces are self-hosted — no CDN at runtime. Download once and
+drop into `assets/fonts/`:
+
+- `HankenGrotesk-Variable.woff2` — Hanken Grotesk variable font
+  (SIL Open Font License, from Google Fonts or
+  https://github.com/marcologous/hanken-grotesk)
+- `IBMPlexMono-Regular.woff2` and `IBMPlexMono-Medium.woff2` — IBM Plex Mono
+  (SIL OFL, from Google Fonts or https://github.com/IBM/plex)
+
+Until the files exist the site falls back to system fonts; the `@font-face`
+rules in `styles.css` pick the files up automatically once added.
+
 ## Before go-live content checklist
 
 - [ ] Replace every `[PROVIDE: …]` placeholder in the HTML.
+- [ ] Font files added to `assets/fonts/` (see above).
+- [ ] Capability figures on the homepage are real and dated — or the section
+      is removed entirely. Same for the RIDDOR row on Safety.
 - [ ] Statutory footer: company number, place of registration, registered
       office — on **every** page (it's duplicated per file).
 - [ ] Privacy notice: retention period + "last updated" date.

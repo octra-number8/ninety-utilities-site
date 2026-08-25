@@ -7,7 +7,7 @@
  *
  * Environment variables (set in Cloudflare Pages → Settings → Variables):
  *   RESEND_API_KEY  — secret. Resend API key for the ninetygroup.co.uk domain.
- *   CONTACT_TO      — destination mailbox, e.g. info@ninetygroup.co.uk
+ *   CONTACT_TO      — destination mailbox, e.g. hello@ninetygroup.co.uk
  *   CONTACT_FROM    — verified sender, e.g. website@ninetygroup.co.uk
  *                     (must be on a domain verified in Resend — see DEPLOY.md;
  *                     the Resend DNS records are additive and must not touch

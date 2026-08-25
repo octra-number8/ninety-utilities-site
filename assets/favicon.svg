@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#22262b"/>
-  <rect y="52" width="64" height="6" fill="#f2b705"/>
-  <text x="32" y="42" font-family="-apple-system, 'Segoe UI', Arial, sans-serif"
-        font-size="34" font-weight="800" fill="#ffffff"
+  <!-- The 90 icon, reversed: ink tile, white 90, corner pair
+       (top-left white, bottom-right orange) per brand guidelines. -->
+  <rect width="64" height="64" rx="12" fill="#1D1D1F"/>
+  <path d="M12 22 V12 H22 V16 H16 V22 Z" fill="#FFFFFF"/>
+  <path d="M52 42 V52 H42 V48 H48 V42 Z" fill="#EE7D00"/>
+  <text x="32" y="42" font-family="'Hanken Grotesk', -apple-system, Arial, sans-serif"
+        font-size="26" font-weight="800" fill="#FFFFFF"
         text-anchor="middle">90</text>
 </svg>
