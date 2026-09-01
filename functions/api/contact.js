@@ -17,8 +17,8 @@
  * reveals the matching status message — so the flow works without JS.
  */
 
-const OK = "/contact.html#sent";
-const ERR = "/contact.html#error";
+const OK = "/contact#sent";
+const ERR = "/contact#error";
 
 function redirect(to) {
   return new Response(null, { status: 303, headers: { Location: to } });
@@ -98,5 +98,5 @@ export async function onRequestPost({ request, env }) {
 // Anything other than POST (GET, HEAD, …) → back to the form.
 // Pages routes POST to onRequestPost above; this catches the rest.
 export async function onRequestGet() {
-  return redirect("/contact.html");
+  return redirect("/contact");
 }

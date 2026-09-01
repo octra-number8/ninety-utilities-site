@@ -104,11 +104,19 @@ only when real content/certificates exist.
 Header nav: Mains renewal · Safety · Careers + "Start an enquiry" Action
 button. Sitemap lists 5 indexable pages.
 
+## URLs
+
+Cloudflare Pages serves pretty URLs: `/mains-renewal.html` 308-redirects to
+`/mains-renewal`. All internal links, canonicals, OG urls, the sitemap and
+the contact function's redirects use the EXTENSIONLESS form. Caveat: a plain
+local static server (python http.server) does not do this mapping — check
+pages locally by their .html filenames, or test on the pages.dev deployment.
+
 ## Contact form
 
 Plain-POST to `functions/api/contact.js` (Pages Function) → Resend API →
 `CONTACT_TO` (hello@). Honeypot (`website` field) + fast-submit check
-(`form_ts`, tolerated if absent). Redirects to `/contact.html#sent` /
+(`form_ts`, tolerated if absent). Redirects to `/contact#sent` /
 `#error`; CSS `:target` reveals the message — works with no JS. Env vars:
 `RESEND_API_KEY` (secret), `CONTACT_TO`, `CONTACT_FROM`.
 
